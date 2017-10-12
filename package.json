@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-morph",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Uses jstransformer to render templates",
   "license": "MIT",
   "author": {
