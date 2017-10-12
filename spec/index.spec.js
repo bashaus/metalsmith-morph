@@ -75,4 +75,28 @@ describe('prepare', function() {
         done()
       })
   })
+
+  it('includes metadata', done => {
+    const metalsmith = initMetalsmith('includes-metadata')
+    const collections = require('metalsmith-collections')
+
+    metalsmith
+      .use(collections({
+        all_files: {
+          pattern: "**/*.html.njk"
+        }
+      }))
+      .use(morph({
+        nunjucks: {
+          globals: {
+            makeUpperCase: function (str) { return str.toUpperCase() }
+          }
+        }
+      }))
+      .build(err => {
+        if (err) throw err
+        assertDirEqual(getExpectedDirectory('includes-metadata'), metalsmith.destination())
+        done()
+      })
+  })
 })
