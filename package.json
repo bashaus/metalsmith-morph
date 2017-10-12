@@ -1,26 +1,30 @@
 {
-	"name": "metalsmith-morph",
-	"description": "Uses jstransformer to render templates",
-	"version": "0.0.1",
-	"license": "MIT",
-	"author": {
-		"name": "Bashkim Isai",
-		"url": "https://www.bashkim.com/"
-	},
-	"scripts": {
-		"test": "jasmine"
-	},
-	"main": "lib/index.js",
-	"devDependencies": {
-		"assert-dir-equal": "^1.1.0",
-		"jasmine": "^2.8.0",
-		"jstransformer-markdown": "^1.2.1",
-		"jstransformer-nunjucks": "^0.5.0",
-		"metalsmith": "^2.3.0"
-	},
-	"dependencies": {
-		"inputformat-to-jstransformer": "^1.2.1",
-		"is-utf8": "^0.2.1",
-		"jstransformer": "^1.0.0"
-	}
+  "name": "metalsmith-morph",
+  "version": "0.0.1",
+  "description": "Uses jstransformer to render templates",
+  "license": "MIT",
+  "author": {
+    "name": "Bashkim Isai",
+    "url": "https://www.bashkim.com/"
+  },
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bashaus/metalsmith-morph.git"
+  },
+  "scripts": {
+    "test": "jasmine"
+  },
+  "dependencies": {
+    "inputformat-to-jstransformer": "^1.2.1",
+    "is-utf8": "^0.2.1",
+    "jstransformer": "^1.0.0"
+  },
+  "devDependencies": {
+    "assert-dir-equal": "^1.1.0",
+    "jasmine": "^2.8.0",
+    "jstransformer-markdown": "^1.2.1",
+    "jstransformer-nunjucks": "^0.5.0",
+    "metalsmith": "^2.3.0"
+  }
 }
