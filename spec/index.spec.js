@@ -17,7 +17,7 @@ describe('prepare', function() {
     const metalsmith = initMetalsmith('single-extension')
 
     metalsmith
-      .use(files => { expect(Object.keys(files)).toEqual(['index.html.njk']) })
+      .use(files => expect(Object.keys(files)).toEqual(['index.html.njk']))
       .use(morph())
       .use(files => {
         expect(Object.keys(files)).toEqual(['index.html'])
@@ -35,9 +35,9 @@ describe('prepare', function() {
     const metalsmith = initMetalsmith('multiple-extensions')
 
     metalsmith
-      .use(files => { expect(Object.keys(files)).toEqual(['index.html.md.njk']) })
+      .use(files => expect(Object.keys(files)).toEqual(['index.html.md.njk']))
       .use(morph())
-      .use(files => { expect(Object.keys(files)).toEqual(['index.html']) })
+      .use(files => expect(Object.keys(files)).toEqual(['index.html']))
       .build(err => {
         if (err) throw err
         assertDirEqual(getExpectedDirectory('multiple-extensions'), metalsmith.destination())
@@ -50,7 +50,7 @@ describe('prepare', function() {
 
     metalsmith
       .use(morph())
-      .use(files => { expect(files['blue-square.png'].transformers).toEqual([]) })
+      .use(files => expect(files['blue-square.png'].transformers).not.toBeDefined())
       .build(err => {
         if (err) throw err
         assertDirEqual(getExpectedDirectory('skips-non-utf8'), metalsmith.destination())
@@ -86,13 +86,7 @@ describe('prepare', function() {
           pattern: "**/*.html.njk"
         }
       }))
-      .use(morph({
-        nunjucks: {
-          globals: {
-            makeUpperCase: function (str) { return str.toUpperCase() }
-          }
-        }
-      }))
+      .use(morph())
       .build(err => {
         if (err) throw err
         assertDirEqual(getExpectedDirectory('includes-metadata'), metalsmith.destination())
