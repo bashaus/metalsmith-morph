@@ -93,4 +93,23 @@ describe('prepare', function() {
         done()
       })
   })
+
+
+  it('replaces filenames', done => {
+    const metalsmith = initMetalsmith('replace-file-extension')
+    const collections = require('metalsmith-collections')
+
+    metalsmith
+      .use(collections({
+        all_files: {
+          pattern: "**/*.html.njk"
+        }
+      }))
+      .use(morph())
+      .build(err => {
+        if (err) throw err
+        assertDirEqual(getExpectedDirectory('replace-file-extension'), metalsmith.destination())
+        done()
+      })
+  })
 })
