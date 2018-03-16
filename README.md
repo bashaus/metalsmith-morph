@@ -1,5 +1,6 @@
 # metalsmith-morph
 
+[![npm version][img:npm]][url:npm]
 [![build status][img:build-status]][url:build-status]
 
 > A jstransformer template engine for metalsmith
@@ -116,3 +117,6 @@ The main difference is that metalsmith-morph is a single plugin which exposes
 
 [img:build-status]: https://travis-ci.org/bashaus/metalsmith-morph.svg
 [url:build-status]: https://travis-ci.org/bashaus/metalsmith-morph
+
+[img:npm]: https://img.shields.io/npm/v/metalsmith-morph.svg
+[url:npm]: https://www.npmjs.com/package/metalsmith-morph
